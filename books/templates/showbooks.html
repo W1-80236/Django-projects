@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+    <link rel="stylesheet" href="{% static "css/demo.css"%}">
+</head>
+<body>
+<img src="{% static "images/book.jpeg"%}" alt = "books image" , height ="300px",width="700px">
+<h1> Book list</h1>
+
+{% if booklist %}
+<table>
+    <thead>
+    <th>bname</th>
+    <th>bqnty</th>
+    <th>bauthor</th>
+    <th>bpublication</th>
+    <th>publisheddate</th>
+
+    </thead>
+    {% for item in booklist %}
+    <tr>
+        <td>{{item.bname}}</td>
+        <td>{{item.bqnty}}</td>
+        <td>{{item.bauthor}}</td>
+        <td>{{item.bpublication}}</td>
+        <td>{{item.publisheddate}}</td>
+
+    </tr>
+    {% endfor%}
+
+</table>
+{%else%}
+<h1> No record Found</h1>
+{%endif%}
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient details</title>
+    <link rel="stylesheet" href='{% static "css/demo.css"%}'>
+</head>
+<body>
+<img src="https://5.imimg.com/data5/XG/CT/MY-21386006/hospital-management-system-500x500.jpg">
+<h1> welcome to hospital management system</h1>
+
+{% if Pdetails %}
+<table>
+    <thead>
+    <th>pname</th>
+    <th>admitdate</th>
+    <th>disdate</th>
+    <th>mailid</th>
+
+    </thead>
+    {% for item in Pdetails %}
+    <tr>
+        <td>{{item.pname}}</td>
+        <td>{{item.admitdate}}</td>
+        <td>{{item.disdate}}</td>
+        <td>{{item.mailid}}</td>
+
+    </tr>
+    {% endfor%}
+
+</table>
+{%else%}
+<h1> No record Found</h1>
+{%endif%}
+</body>
+</html>
